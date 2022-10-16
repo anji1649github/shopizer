@@ -1,5 +1,5 @@
 pipeline {
-    agent {lavel 'maven'}
+    agent {label 'maven'}
     triggers { 
         pollSCM('* * * * * ')
         }
@@ -15,6 +15,11 @@ pipeline {
                 sh 'mvn package'  
             }
         }
+            stage ('archiveArtifacts') {
+                steps {
+                    junit '**/surefire-reports/*.xml'
+                }
+            }
         
         }
     }
