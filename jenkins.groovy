@@ -1,13 +1,12 @@
 pipeline {
-    agent any
+    agent {label 'maven'}
     triggers { 
         pollSCM('* * * * * ')
         }
-    
     stages {
         stage ('vcs') {
             steps {
-                git branch: 'master',
+                git branch: 'develop',
                     url: 'https://github.com/anji1649github/shopizer.git'
             }
         }
