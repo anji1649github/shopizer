@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage ('vcs') {
             steps {
-                git branch: 'realese',
+                git branch: 'release',
                     url: 'https://github.com/anji1649github/shopizer.git'
             }
         }
