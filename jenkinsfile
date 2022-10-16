@@ -1,12 +1,11 @@
 pipeline {
     agent {label 'maven'}
-    triggers { 
-        pollSCM('* * * * * ')
+    triggers { cron('45 11 * * *')
         }
     stages {
         stage ('vcs') {
             steps {
-                git branch: 'develop',
+                git branch: 'realese',
                     url: 'https://github.com/anji1649github/shopizer.git'
             }
         }
