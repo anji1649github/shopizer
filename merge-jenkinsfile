@@ -1,11 +1,11 @@
 pipeline {
     agent {label 'maven'}
-    triggers { cron('30 9 * * *')
+    triggers { cron('40 9 * * *')
                       }
     stages {
         stage ('vcs') {
             steps {
-                git branch "master",
+                git branch: "master",
                 url: 'https://github.com/anji1649github/shopizer.git'
                 }
             }
