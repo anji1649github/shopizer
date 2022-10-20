@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'maven'}
+    agent {label 'node-2'}
     triggers { cron('12 12 * * *')
                       }
     stages {
