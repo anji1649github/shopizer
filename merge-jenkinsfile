@@ -20,7 +20,7 @@ pipeline {
                         'git checkout develop'
                         'git checkout release'
                         'git merge develop --no-ff'
-                        'git push  origin release'
+                        'git push -f origin release'
                          """
                          }
 
