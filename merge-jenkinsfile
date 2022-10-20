@@ -1,6 +1,6 @@
 pipeline {
     agent {label 'maven'}
-    triggers { cron('10 10 * * *')
+    triggers { cron('59 11 * * *')
                       }
     stages {
         stage ('vcs') {
@@ -21,7 +21,7 @@ pipeline {
                         'git checkout release'
                         'git merge develop no-ff'
                         'git push  origin release'
-                       """
+                         """
                          }
 
                // stage ('archiveArtifacts') {
